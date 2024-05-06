@@ -1,69 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <header>
+        <div class="top-nav">
+            <img src="bob.jpg" alt="Bob's Diner Logo" class="logo">
+            <h1>Bob's Diner</h1>
+            <!-- Navigation remains the same -->
+        </div>
+    </header>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bob's Diner in Walkden, Manchester</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
+    <div class="background-video">
+        <video autoplay loop muted>
+            <source src="bobs-diner.mp4" type="video/mp4">
+        </video>
+    </div>
     <header>
-        <h1>Welcome to Bob's Diner, Walkden!</h1>
-        <nav>
-            <ul>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#location">Location</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="top-nav">
+            <h1>Bob's Diner</h1>
+            <nav>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#location">Location</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     
-    <section id="about">
+    <section id="about" class="section-padding">
         <h2>About Us</h2>
         <p>Bob's Diner brings a slice of American diner culture to Manchester, blended with the charm of British hospitality. Enjoy our unique atmosphere!</p>
-        <h3>The Founder - Bob Thompson</h3>
-        <p>Born and raised in Tower Hamlets, London, Bob Thompson grew up surrounded by a vibrant mix of cultures and cuisines. Inspired by the bustling food markets and his own family’s cooking, Bob dreamed of creating a place that combined the warm, inclusive vibe of his London neighborhood with the classic American diner experience.</p>
-        <p>In 2015, this dream became a reality when Bob opened the doors to Bob’s Diner in Walkden. Drawing from his diverse background, Bob has crafted a menu that offers something for everyone, ensuring that each dish carries a hint of his journey from Tower Hamlets to Walkden.</p>
+        <div class="founder-info">
+            <img src="bob-thompson.jpg" alt="Bob Thompson">
+            <div>
+                <h3>Founder: Bob Thompson</h3>
+                <p>Born in Tower Hamlets, Bob dreamed of blending his London roots with American diner flair. In 2015, he made it happen right here in Walkden.</p>
+            </div>
+        </div>
     </section>
 
-    <section id="menu">
-        <h2>Our Menu</h2>
-        <p>Check out our delicious, creatively crafted dishes below!</p>
-        <div class="menu-item">
-            <p><strong>Manchester Maple Burger:</strong> A juicy beef patty topped with crispy bacon, cheddar cheese, and a sweet maple syrup glaze, served on a fresh brioche bun.</p>
-        </div>
-        <div class="menu-item">
-            <p><strong>Walkden Waffle Wonder:</strong> Fluffy waffles topped with fresh berries, whipped cream, and a drizzle of honey.</p>
-        </div>
-        <div class="menu-item">
-            <p><strong>High Street Hot Wings:</strong> Spicy buffalo wings served with celery sticks and a cooling blue cheese dip.</p>
+    <section id="menu" class="section-padding">
+        <h2>Our Epic Menu</h2>
+        <div class="menu-container">
+            <!-- Interactive menu items go here -->
         </div>
     </section>
     
-    <section id="location">
-        <h2>Find Us</h2>
+    <section id="location" class="section-padding">
+        <h2>Our Location</h2>
         <p>15 High Street, Walkden, Manchester, M28 XXX</p>
-        <div id="map"></div>
+        <div id="googleMap" style="width:100%;height:400px;"></div>
     </section>
 
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <p>Explore moments from our diner!</p>
+    <section id="gallery" class="section-padding">
+        <h2>Photo Gallery</h2>
         <div class="photo-gallery">
-            <!-- Add images here -->
+            <!-- Dynamic photo gallery -->
         </div>
     </section>
 
-    <section id="testimonials">
-        <h2>What Our Customers Say</h2>
-        <p>Read the experiences and stories of those who've dined with us!</p>
-        <!-- Add customer testimonials here -->
+    <section id="reviews" class="section-padding">
+        <h2>Customer Reviews</h2>
+        <div class="review-slider">
+            <!-- Customer reviews carousel -->
+        </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="section-padding">
         <h2>Contact Us</h2>
         <form id="contactForm">
             <input type="text" id="name" name="name" placeholder="Your Name" required>
@@ -73,8 +86,8 @@
         </form>
     </section>
 
-    <footer>
-        <p>Thank you for visiting Bob's Diner, where Manchester meets America!</p>
+    <footer class="section-padding">
+        <p>&copy; 2024 Bob's Diner. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>

@@ -52,3 +52,61 @@ document.querySelectorAll('.project-item img').forEach(image => {
         });
     });
 });
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Lightbox for gallery images
+function openLightbox(imgSrc) {
+    let lightbox = document.createElement('div');
+    lightbox.id = 'lightbox';
+    lightbox.style.position = 'fixed';
+    lightbox.style.top = '0';
+    lightbox.style.left = '0';
+    lightbox.style.width = '100%';
+    lightbox.style.height = '100%';
+    lightbox.style.backgroundColor = 'rgba(0,0,0,0.8)';
+    lightbox.style.display = 'flex';
+    lightbox.style.justifyContent = 'center';
+    lightbox.style.alignItems = 'center';
+
+    let img = document.createElement('img');
+    img.src = imgSrc;
+    img.style.maxWidth = '90%';
+    img.style.maxHeight = '80%';
+    lightbox.appendChild(img);
+
+    lightbox.addEventListener('click', e => {
+        if (e.target !== e.currentTarget) return;
+        lightbox.parentNode.removeChild(lightbox);
+    });
+
+    document.body.appendChild(lightbox);
+}
+
+document.querySelectorAll('.photo-gallery img').forEach(image => {
+    image.addEventListener('click', () => openLightbox(image.src));
+});
+
+// Animated counter for statistics (visitors, dishes served, etc.)
+document.querySelectorAll('.counter').forEach(counter => {
+    const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / 200;
+
+        if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 1);
+        } else {
+            counter.innerText = target;
+        }
+    };
+    updateCount();
+});
